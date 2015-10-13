@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body -%}
+	{% for post in posts %}
+		<div class="post">
+			<h1>{{ post.title }}</h1>
+			<p>{{ post.content |slice(0, 25) }}...<a href="{{ path('mfp_web_site_display', {id: post.id} )}}">Read More</a></p>
+	{% endfor %}
+{% endblock %}

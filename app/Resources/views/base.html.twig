@@ -4,21 +4,48 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+       
+        <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
         {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+        
         {% block stylesheets %}
              <!-- Bootstrap -->
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css')}}" />
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-            <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
-            <script src="{{ asset('js/jquery.js') }}"></script>
-            <!-- Include all JavaScripts, compiled by Assetic -->
-            <script src="{{ asset('js/bootstrap.js') }}"></script>
-        {% endblock %}
+        <div class="container-fluid">
+            <header id="header">                
+                    <nav class="navbar navbar-default   " role="navigation">
+                    <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle"
+                            data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ path('mfp_web_site_homepage') }}">MFProduction</a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        {{ knp_menu_render('MFPWebSiteBundle:Builder:mainMenu') }}
+                        {{ knp_menu_render('MFPWebSiteBundle:Builder:rightMenu', { 'style': 'tabs' }) }}
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+            </div>
+        </header>
+            <div class="container">
+            {% block body %}{% endblock %}
+            {% block javascripts %}
+                <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+                <script src="{{ asset('js/jquery.js') }}"></script>
+                <!-- Include all JavaScripts, compiled by Assetic -->
+                <script src="{{ asset('js/bootstrap.js') }}"></script>
+            {% endblock %}
+            </div>
+        </div>
     </body>
 </html>

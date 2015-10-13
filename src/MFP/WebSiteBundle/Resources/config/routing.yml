@@ -1,0 +1,29 @@
+mfp_web_site_admin_post:
+    resource: "@MFPWebSiteBundle/Resources/config/routing/post.yml"
+    prefix:   /admin/post
+
+mfp_web_site_admin_category:
+    resource: "@MFPWebSiteBundle/Resources/config/routing/category.yml"
+    prefix:   /admin/category
+
+mfp_web_site_admin_user:
+    resource: "@MFPWebSiteBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user
+
+mfp_web_site_homepage:
+    path:     /
+    defaults: { _controller: MFPWebSiteBundle:Default:index }
+
+mfp_web_site_display:
+    path: /blog/{id}
+    defaults: { _controller: MFPWebSiteBundle:Default:display}
+
+login:
+    path: /login
+    defaults: { _controller: MFPWebSiteBundle:Security:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    pattern: /logout

@@ -1,3 +1,7 @@
+mfp_web_site:
+    resource: "@MFPWebSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

@@ -1,0 +1,30 @@
+admin_post:
+    path:     /
+    defaults: { _controller: "MFPWebSiteBundle:Post:index" }
+
+admin_post_show:
+    path:     /{id}/show
+    defaults: { _controller: "MFPWebSiteBundle:Post:show" }
+
+admin_post_new:
+    path:     /new
+    defaults: { _controller: "MFPWebSiteBundle:Post:new" }
+
+admin_post_create:
+    path:     /create
+    defaults: { _controller: "MFPWebSiteBundle:Post:create" }
+    methods:  POST
+
+admin_post_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MFPWebSiteBundle:Post:edit" }
+
+admin_post_update:
+    path:     /{id}/update
+    defaults: { _controller: "MFPWebSiteBundle:Post:update" }
+    methods:  [POST, PUT]
+
+admin_post_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MFPWebSiteBundle:Post:delete" }
+    methods:  [POST, DELETE]

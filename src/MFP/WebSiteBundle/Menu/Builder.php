@@ -27,17 +27,17 @@ class Builder extends ContainerAware
 		if ($securityContext->isGranted('ROLE_ADMIN')) {
 
 		   	$user->getusername();
-		   	$menu->addChild('Blog-posts', array('route' => 'admin_post'));
+		   	$menu->addChild('Posts', array('route' => 'admin_post'));
 		   	$menu->addChild('Users', array('route' => 'admin_user'));
         	$menu->addChild('Category', array('route' => 'admin_category'));
-        	$menu->addChild('Login as: '.$user);
-			$menu['Login as: '.$user]->setLabelAttribute('class', 'no-link-span');
+        	//$menu->addChild('Login as: '.$user);
+			//$menu['Login as: 	'.$user]->setLabelAttribute('class', 'no-link-span');
         	$menu->addChild('Logout', array('route' => 'logout'));
         }
         elseif ($securityContext->isGranted('ROLE_USER')) {
         	$menu->addChild('Blog-posts', array('route' => 'admin_post'));
-        	$menu->addChild('Login as: '.$user->getusername());
-        	$menu['Login as: '.$user->getusername()]->setLabelAttribute('class', 'no-link-span');
+        	//$menu->addChild('Login as: '.$user->getusername());
+        	//$menu['Login as: '.$user->getusername()]->setLabelAttribute('class', 'no-link-span');
         	$menu->addChild('Logout', array('route' => 'logout'));	
         }
         

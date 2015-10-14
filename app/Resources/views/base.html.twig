@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> {% block title %}{% endblock %}</title>
+        
         <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
         {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
         
@@ -13,30 +14,36 @@
         <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css')}}" />
         {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        {# <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /> #}
     </head>
     <body>
         <div class="container-fluid">
             <header id="header">                
                     <nav class="navbar navbar-default   " role="navigation">
-                    <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle"
-                            data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="{{ path('mfp_web_site_homepage') }}">MFProduction</a>
-                    </div>
-                    <div class="collapse navbar-collapse navbar-ex1-collapse">
-                        {{ knp_menu_render('MFPWebSiteBundle:Builder:mainMenu') }}
-                        {{ knp_menu_render('MFPWebSiteBundle:Builder:rightMenu', { 'style': 'tabs' }) }}
-                    </div><!-- /.navbar-collapse -->
-                </nav>
-            </div>
-        </header>
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle"
+                                    data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="{{ path('mfp_web_site_homepage') }}">MFProduction</a>
+                            </div>
+                            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                                {{ knp_menu_render('MFPWebSiteBundle:Builder:mainMenu') }}
+                                {{ knp_menu_render('MFPWebSiteBundle:Builder:rightMenu', { 'style': 'tabs' }) }}
+                        </div><!-- /.navbar-collapse -->
+                    </nav>
+                </div>
+            </header>
             <div class="container">
             {% block body %}{% endblock %}
             {% block javascripts %}

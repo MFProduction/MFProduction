@@ -1,6 +1,27 @@
 {% extends '::base.html.twig' %}
 {% block body -%}
-	<div class="post">
-		<h1>{{ post.title }}</h1>
-		<p>{{ post.content}}</p>
+	<div class="row">
+		<div class="col-md-3 profile">
+			<aside>
+				<img src="http://placehold.it/150x150" alt="logo image" class="img-circle">
+				<h4>Matej Ferenc</h4>
+				<p>Freelance</p>
+				<hr>
+				<p>share this page</p>
+				<ul class="clearfix">
+					<li>F</li>
+					<li>G</li>
+					<li>Y</li>
+					<li>L</li>
+				</ul>
+			</aside>
+		</div>
+		<div class="col-md-8">
+			<article>
+				<h1>{{ post.title }}</h1>
+				<div class="lead">
+					{{ post.content }}
+				</div>
+			</article>	
+	</div>
 {% endblock %}

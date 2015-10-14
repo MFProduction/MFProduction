@@ -10,9 +10,14 @@ class DefaultController extends Controller
     {
     	$em = $this->getDoctrine()->getManager();
     	$posts = $em->getRepository('MFPWebSiteBundle:Post')->findAll();
-        
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($posts, $this->get('request')->query->get('page', 1), 
+    2);
+
+
         return $this->render('MFPWebSiteBundle:Default:index.html.twig', array(
-        		'posts'=>$posts
+        		'posts'=>$posts,
+                'pagination' => $pagination
         	));
     }
 

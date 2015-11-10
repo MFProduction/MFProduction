@@ -42,3 +42,6 @@ html, body {
 .box {
 	border: 1px solid black;
 }
+ul {
+	 list-style-type: none;
+	}
